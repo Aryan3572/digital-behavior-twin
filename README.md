@@ -20,6 +20,11 @@ activity data and generates behavioral insights using analytics and AI.
 - Frontend: React
 - Backend: Node.js, Express
 - Database: PostgreSQL
+
+## System Architecture
+The system follows a client-server architecture with a modular backend,
+PostgreSQL database, and future AI service integration.
+
 - ORM: Prisma
 - Auth: JWT
 - Analytics: Python (later phase)
