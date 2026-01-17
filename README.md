@@ -20,3 +20,12 @@ and generates meaningful behavioral insights.
 
 ## Status
 🚧 Day 0 – Planning
+
+## System Design
+The system follows a client-server architecture where users log
+activities through a frontend interface. The backend processes
+activity data and derives behavioral insights dynamically.
+
+## Core Data Model
+The project is centered around activity logs, which are used to
+generate timelines, summaries, and behavior trends.
