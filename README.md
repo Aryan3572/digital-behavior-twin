@@ -1,13 +1,15 @@
-# Digital Behavior Twin (DBT)
+# Digital Behavior Twin
 
-## Problem Statement
-People lack awareness of how they actually spend their digital time.
-This project builds a digital behavior twin that models user activity
-patterns and provides insights into focus, distraction, and productivity.
+A flagship full-stack project that models user digital behavior
+using analytics and AI to provide insights into focus and productivity.
+
+## Problem
+Users lack clear visibility into how their digital time is spent
+and how behavior patterns evolve over time.
 
 ## Objective
-To design and implement a privacy-first platform that analyzes user
-activity data and generates behavioral insights using analytics and AI.
+To build a privacy-first platform that captures user activity data
+and generates meaningful behavioral insights.
 
 ## MVP Scope
 - User authentication
@@ -16,18 +18,5 @@ activity data and generates behavioral insights using analytics and AI.
 - Basic behavior insights
 - Trend-based predictions
 
-## Tech Stack
-- Frontend: React
-- Backend: Node.js, Express
-- Database: PostgreSQL
-
-## System Architecture
-The system follows a client-server architecture with a modular backend,
-PostgreSQL database, and future AI service integration.
-
-- ORM: Prisma
-- Auth: JWT
-- Analytics: Python (later phase)
-
-## Project Status
-🚧 Planning Phase (Day 1)
+## Status
+🚧 Day 0 – Planning
