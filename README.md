@@ -18,9 +18,6 @@ and generates meaningful behavioral insights.
 - Basic behavior insights
 - Trend-based predictions
 
-## Status
-🚧 Day 0 – Planning
-
 ## System Design
 The system follows a client-server architecture where users log
 activities through a frontend interface. The backend processes
@@ -56,5 +53,59 @@ These logs are used to compute timelines, summaries, and behavior trends.
 ---
 
 ## Project Status
-🚧 Backend setup in progress
+🚧 Backend core completed (Auth, Activity Logging, Insights)
+
+---
+
+## Features Implemented
+
+### Authentication
+- User registration and login
+- Password hashing using bcrypt
+- JWT-based authentication
+- Protected API routes
+
+### Activity Logging
+- Add user activities with category and time range
+- Fetch daily activity timelines
+- Fetch weekly activity summaries
+
+### Behavior Insights
+- Daily insights (focus time, distraction time, longest focus session)
+- Weekly behavior trends
+- Focus vs distraction analytics
+- All insights computed dynamically (no stored metrics)
+
+---
+
+## API Overview
+
+### Auth
+- POST /api/auth/register
+- POST /api/auth/login
+
+### Activities
+- POST /api/activities
+- GET /api/activities/day
+- GET /api/activities/week
+
+### Insights
+- GET /api/insights/day
+- GET /api/insights/week
+
+---
+
+## Current Capabilities
+The backend currently supports secure user authentication, activity
+data collection, and dynamic behavioral analytics. The system forms
+the foundation of a Digital Behavior Twin that will be extended with
+visual dashboards and AI-based analysis in later phases.
+
+---
+
+## Design Principles
+- Privacy-first (manual logging, no passive tracking)
+- Single source of truth (activity logs)
+- Computed insights instead of stored metrics
+- Modular backend architecture (routes, controllers, services)
 
