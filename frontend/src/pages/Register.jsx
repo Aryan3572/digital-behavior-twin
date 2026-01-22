@@ -26,6 +26,7 @@ export default function Register() {
 
   return (
     <div className="max-w-md mx-auto mt-20">
+    <h1>Register Page</h1>
       <h2 className="text-2xl mb-4">Register</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -54,3 +55,4 @@ export default function Register() {
     </div>
   );
 }
+
