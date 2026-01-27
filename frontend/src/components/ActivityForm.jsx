@@ -15,6 +15,18 @@ export default function ActivityForm({ onAdd }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    
+  if (
+    !form.title ||
+    !form.startTime ||
+    !form.endTime ||
+    !form.date
+  ) {
+    alert("Please fill all fields");
+    return;
+  }
+  
     try {
       await api.post("/activities", form);
       onAdd();
