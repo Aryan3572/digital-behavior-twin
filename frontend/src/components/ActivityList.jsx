@@ -1,7 +1,11 @@
-export default function ActivityList({activities}) {
-    if(!activities.length){
-        return <p>No activities logged today.</p>;
-    }
+export default function ActivityList({activities}) {if (!activities.length) {
+  return (
+    <div className="border p-4 text-center text-gray-500">
+      No activities logged today. Start by adding one 👆
+    </div>
+  );
+}
+
     return (
         <ul className="space-y-2">
             {activities.map(function(a) {

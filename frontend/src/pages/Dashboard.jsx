@@ -12,6 +12,8 @@ export default function Dashboard() {
   const [activities, setActivities] = useState([]);
   const [dailyInsights, setDailyInsights] = useState(null);
   const [weeklyData, setWeeklyData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   const today = new Date().toISOString().split("T")[0];
   const start = new Date(Date.now() - 6 * 86400000).toISOString().split("T")[0];
@@ -24,6 +26,14 @@ export default function Dashboard() {
         api.get(`/insights/week?start=${start}&end=${today}`),
       ]);
 
+        setLoading(true);
+        try {
+          // existing logic
+        } catch (err) {
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
       setActivities(act.data);
       setDailyInsights(daily.data);
 
@@ -51,15 +61,32 @@ export default function Dashboard() {
     fetchData();
   }, [navigate]);
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+    if (loading) {
+  return <p className="p-6">Loading dashboard...</p>;
+}
+
+
   return (
     <div className="p-6">
+
       <h1 className="text-2xl mb-4">Dashboard</h1>
+      <button
+        onClick={handleLogout}
+        className="mb-4 bg-red-500 text-white px-4 py-2 rounded"
+      >
+        Logout
+    </button>
 
       <DailyInsights insights={dailyInsights} />
       <ActivityForm onAdd={fetchData} />
       <ActivityList activities={activities} />
 
       <WeeklyChart data={weeklyData} />
+
     </div>
   );
 }

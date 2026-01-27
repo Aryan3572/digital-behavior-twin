@@ -109,3 +109,16 @@ visual dashboards and AI-based analysis in later phases.
 - Computed insights instead of stored metrics
 - Modular backend architecture (routes, controllers, services)
 
+
+
+---
+
+### 🔹 Future Enhancements
+```md
+## Future Enhancements
+- Monthly behavior reports
+- AI-based productivity predictions
+- Mobile app version
+- Advanced charts and comparisons
+
+

@@ -26,7 +26,7 @@ export default function ActivityForm({ onAdd }) {
     alert("Please fill all fields");
     return;
   }
-  
+
     try {
       await api.post("/activities", form);
       onAdd();
@@ -38,7 +38,7 @@ export default function ActivityForm({ onAdd }) {
         date: "",
       });
     } catch (err) {
-      alert("Failed to add activity");
+      alert(err.response?.data?.error || "Something went wrong");
     }
   };
 
