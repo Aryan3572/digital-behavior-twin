@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -52,6 +52,13 @@ export default function Register() {
           Register
         </button>
       </form>
+
+         <p className="mt-4 text-center">
+      Already have an account?{" "}
+      <Link to="/login" className="text-blue-600 underline">
+        Login
+      </Link>
+    </p>
     </div>
   );
 }
