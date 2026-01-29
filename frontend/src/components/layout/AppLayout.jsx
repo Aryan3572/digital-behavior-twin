@@ -14,6 +14,16 @@ export default function AppLayout({children}) {
                 </div>
             </aside>
 
+                        {/* Mobile Top Bar */}
+            <div className="md:hidden flex items-center justify-between p-4 border-b border-border">
+            <h1 className="font-semibold">Digital Twin</h1>
+
+            <button className="text-textMuted text-sm">
+                Menu
+            </button>
+            </div>
+
+
             {/* Main Content */}
             <main className="flex-1 p-6 md:p-10">
                 {children}

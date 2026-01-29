@@ -1,15 +1,20 @@
+import { motion } from "framer-motion";
+
 export default function Card({ children, className }) {
-    return (
-        <div 
-        className={`
-        bg-surface
-        border border-border
-        rounded-xl
-        p-5
-        shadow-sm
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25 }}
+      className={`
+        bg-surface 
+        border border-border 
+        rounded-xl 
+        p-5 
         ${className}
-        `}>
-            {children}
-        </div>
-    );
+      `}
+    >
+      {children}
+    </motion.div>
+  );
 }

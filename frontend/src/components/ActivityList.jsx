@@ -3,9 +3,13 @@ import Card from "./ui/Card";
 export default function ActivityList({ activities }) {
   if (!activities.length) {
     return (
-      <Card className="p-4 text-center text-gray-500">
-        No activities logged today. Start by adding one 👆
-      </Card>
+      <div className="text-center text-textMuted py-10">
+            <p>No activities yet</p>
+            <p className="text-xs mt-1">
+                Start by logging your first focus session 🚀
+            </p>
+     </div>
+
     );
   }
 

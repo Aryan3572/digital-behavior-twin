@@ -8,6 +8,7 @@ import api from "../services/api";
 import AppLayout from "../components/layout/AppLayout";
 import Card from "../components/ui/Card";
 import MetricTitle from "../components/dashboard/MetricTitle";
+import Skeleton from "../components/ui/Skeleton";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -64,15 +65,17 @@ export default function Dashboard() {
     navigate("/login");
   };
 
-  if (loading) {
-    return <p className="p-6">Loading dashboard...</p>;
-  }
+  // if (loading) {
+  //   return <p className="p-6">Loading dashboard...</p>;
+  // }
+
+  <Skeleton className="h-24 w-full" />
 
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto space-y-6 p-6">
         <Card className="p-6 space-y-4">
-          <div className="flex items-center justify-between mb-8">
+          <div className="max-w-5xl mx-auto space-y-6 pb-24 md:pb-0">
             <h1 className="text-2xl font-semibold">
               Dashboard
             </h1>
