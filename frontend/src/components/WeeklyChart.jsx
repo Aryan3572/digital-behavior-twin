@@ -9,11 +9,13 @@ import {
   Legend,
 } from "recharts";
 
+import Card from "./ui/Card";
+
 export default function WeeklyChart({ data }) {
   if (!data.length) return null;
 
   return (
-    <div className="border p-4 mt-6">
+    <Card className="border p-4 mt-6">
       <h2 className="text-xl mb-2">Weekly Focus vs Distraction</h2>
 
       <ResponsiveContainer width="100%" height={300}>
@@ -41,6 +43,6 @@ export default function WeeklyChart({ data }) {
           />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </Card>
   );
 }

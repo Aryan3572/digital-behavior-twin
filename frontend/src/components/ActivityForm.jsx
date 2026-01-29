@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
+import Card from "./ui/Card";
 
 export default function ActivityForm({ onAdd }) {
   const [form, setForm] = useState({
@@ -43,6 +44,7 @@ export default function ActivityForm({ onAdd }) {
   };
 
   return (
+    <Card className="mb-6">
     <form onSubmit={handleSubmit} className="space-y-3 mb-6">
       <input
         name="title"
@@ -92,5 +94,6 @@ export default function ActivityForm({ onAdd }) {
         Add Activity
       </button>
     </form>
+    </Card>
   );
 }
