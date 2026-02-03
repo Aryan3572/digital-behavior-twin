@@ -11,7 +11,7 @@ import MetricTitle from "../components/dashboard/MetricTitle";
 import Skeleton from "../components/ui/Skeleton";
 import CategoryDistribution from "../components/insights/CategoryDistribution";
 import PatternInsights from "../components/insights/PatternInsights";
-
+import TimeOfDayProductivity from "../components/insights/TimeOfDayProductivity";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [categoryDistribution, setCategoryDistribution] = useState({});
   const [patternInsights, setPatternInsights] = useState(null);
+  const [timeOfDay, setTimeOfDay] = useState(null);
 
   const today = new Date().toISOString().split("T")[0];
   const start = new Date(Date.now() - 6 * 86400000)
@@ -31,7 +32,7 @@ export default function Dashboard() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [act, daily, weekly, dist, patterns] = await Promise.all([
+      const [act, daily, weekly, dist, patterns, tod] = await Promise.all([
         api.get(`/activities/day?date=${today}`),
         api.get(`/insights/day?date=${today}`),
         api.get(`/insights/week?start=${start}&end=${today}`),
@@ -39,6 +40,7 @@ export default function Dashboard() {
           `/insights/category-distribution?start=${start}&end=${today}`
         ),
         api.get(`/pattern-insights`),
+         api.get(`/insights/time-of-day?start=${start}&end=${today}`)
       ]);
 
       setActivities(act.data);
@@ -55,6 +57,7 @@ export default function Dashboard() {
       setWeeklyData(formatted);
       setCategoryDistribution(dist.data);
       setPatternInsights(patterns.data);
+      setTimeOfDay(tod.data);
     } catch (err) {
       console.error(err);
     } finally {
@@ -141,6 +144,7 @@ export default function Dashboard() {
           </Card>
           
           <PatternInsights data={patternInsights} />
+          <TimeOfDayProductivity data={timeOfDay} />
 
           <CategoryDistribution data={categoryDistribution} />
         </Card>
