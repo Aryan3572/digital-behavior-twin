@@ -25,22 +25,22 @@ export default function PatternInsights({data}) {
 
       <ul className="space-y-3 text-sm">
         <li>
-          🧠 <strong>Average focus session:</strong>{" "}
+          <strong>Average focus session:</strong>{" "}
           {data.avgSession} minutes
         </li>
 
         <li>
-          📅 <strong>Most productive day:</strong>{" "}
+          <strong>Most productive day:</strong>{" "}
           {data.bestDay}
         </li>
 
         <li>
-          ⏰ <strong>Best focus window:</strong>{" "}
+          <strong>Best focus window:</strong>{" "}
           {formatHour(data.bestFocusHour)}
         </li>
 
         <li>
-          ⚠️ <strong>Distractions spike around:</strong>{" "}
+          <strong>Distractions spike around:</strong>{" "}
           {formatHour(data.worstDistractionHour)}
         </li>
       </ul>
