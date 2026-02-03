@@ -121,6 +121,9 @@ visual dashboards and AI-based analysis in later phases.
 - Mobile app version
 - Advanced charts and comparison
 
+--- 
+
+
 ### Features Added
 - Pattern Insights
 - Category distribution 
