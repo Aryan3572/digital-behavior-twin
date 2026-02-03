@@ -10,6 +10,8 @@ import Card from "../components/ui/Card";
 import MetricTitle from "../components/dashboard/MetricTitle";
 import Skeleton from "../components/ui/Skeleton";
 import CategoryDistribution from "../components/insights/CategoryDistribution";
+import PatternInsights from "../components/insights/PatternInsights";
+
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -19,6 +21,7 @@ export default function Dashboard() {
   const [weeklyData, setWeeklyData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categoryDistribution, setCategoryDistribution] = useState({});
+  const [patternInsights, setPatternInsights] = useState(null);
 
   const today = new Date().toISOString().split("T")[0];
   const start = new Date(Date.now() - 6 * 86400000)
@@ -28,13 +31,14 @@ export default function Dashboard() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [act, daily, weekly, dist] = await Promise.all([
+      const [act, daily, weekly, dist, patterns] = await Promise.all([
         api.get(`/activities/day?date=${today}`),
         api.get(`/insights/day?date=${today}`),
         api.get(`/insights/week?start=${start}&end=${today}`),
         api.get(
           `/insights/category-distribution?start=${start}&end=${today}`
         ),
+        api.get(`/pattern-insights`),
       ]);
 
       setActivities(act.data);
@@ -50,11 +54,13 @@ export default function Dashboard() {
 
       setWeeklyData(formatted);
       setCategoryDistribution(dist.data);
+      setPatternInsights(patterns.data);
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
     }
+    
   };
 
   useEffect(() => {
@@ -133,6 +139,8 @@ export default function Dashboard() {
           <Card className="mt-6">
             <WeeklyChart data={weeklyData} />
           </Card>
+          
+          <PatternInsights data={patternInsights} />
 
           <CategoryDistribution data={categoryDistribution} />
         </Card>
