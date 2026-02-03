@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -46,6 +46,14 @@ export default function Login() {
           Login
         </button>
       </form>
+
+      
+         <p className="mt-4 text-center">
+      Do not have an account?{" "}
+      <Link to="/register" className="text-blue-600 underline">
+        Register
+      </Link>
+      </p>
     </div>
   );
 }
