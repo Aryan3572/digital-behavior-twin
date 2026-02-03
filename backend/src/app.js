@@ -2,10 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import authRoutes from './routes/auth.routes.js';
 import authMiddleware from './middlewares/auth.middleware.js';
-import activityRoutes from "./routes/activity.route.js"
-import insightRoutes from "./routes/insight.route.js"
-import patternInsightRoutes from "./routes/patternInsights.route.js";
-
+import activityRoute from "./routes/activity.route.js"
+import insightRoute from "./routes/insight.route.js"
+import patternInsightRoute from "./routes/patternInsights.route.js";
+import categoryDistributionRoute from "./routes/categoryDistribution.route.js";
 
 const app = express();
 
@@ -18,9 +18,10 @@ app.use(
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
-app.use("/api/activities", activityRoutes)
-app.use("/api/insights" , insightRoutes);
-app.use("/api/pattern-insights", patternInsightRoutes);
+app.use("/api/activities", activityRoute)
+app.use("/api/insights" , insightRoute);
+app.use("/api/pattern-insights", patternInsightRoute);
+app.use("/api/insights/category-distribution", categoryDistributionRoute)
 
 app.get("/api/protected", authMiddleware, function(req,res) {
     res.json({
