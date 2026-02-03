@@ -53,7 +53,7 @@ These logs are used to compute timelines, summaries, and behavior trends.
 ---
 
 ## Project Status
-🚧 Backend core completed (Auth, Activity Logging, Insights)
+🚧 Backend core completed (Auth, Activity Logging, Insights, Pattern Insights , Category Distribution)
 
 ---
 
