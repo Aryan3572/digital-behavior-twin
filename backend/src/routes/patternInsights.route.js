@@ -1,15 +1,9 @@
-import { getPatternInsights } from "../services/patternInsights.service.js";
+import express from "express";
+import patternInsightsController from "../controllers/patternInsights.controller.js";
+import auth from "../middlewares/auth.middleware.js";
 
-export async function patternInsightsController(req, res) {
-  try {
-    const userId = req.user.id;
+const router = express.Router();
 
-    const insights = await getPatternInsights(userId);
+router.get("/", auth, patternInsightsController);
 
-    res.json(insights);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to generate pattern insights" });
-  }
-}
-export default patternInsightsController
+export default router;

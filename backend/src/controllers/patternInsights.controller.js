@@ -12,3 +12,5 @@ export async function patternInsightsController(req, res) {
     res.status(500).json({ error: "Failed to generate pattern insights" });
   }
 }
+
+export default patternInsightsController;
