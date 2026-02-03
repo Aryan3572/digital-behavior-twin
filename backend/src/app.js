@@ -6,6 +6,7 @@ import activityRoute from "./routes/activity.route.js"
 import insightRoute from "./routes/insight.route.js"
 import patternInsightRoute from "./routes/patternInsights.route.js";
 import categoryDistributionRoute from "./routes/categoryDistribution.route.js";
+import timeOfDayProductivityRoutes from "./routes/timeOfDayProductivity.routes.js";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/api/activities", activityRoute)
 app.use("/api/insights" , insightRoute);
 app.use("/api/pattern-insights", patternInsightRoute);
 app.use("/api/insights/category-distribution", categoryDistributionRoute)
+app.use("/api/insights/time-of-day", timeOfDayProductivityRoutes);
 
 app.get("/api/protected", authMiddleware, function(req,res) {
     res.json({
