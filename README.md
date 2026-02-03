@@ -3,13 +3,19 @@
 A flagship full-stack project that models user digital behavior
 using analytics and AI to provide insights into focus and productivity.
 
+---
+
 ## Problem
 Users lack clear visibility into how their digital time is spent
 and how behavior patterns evolve over time.
 
+---
+
 ## Objective
 To build a privacy-first platform that captures user activity data
 and generates meaningful behavioral insights.
+
+---
 
 ## MVP Scope
 - User authentication
@@ -18,11 +24,12 @@ and generates meaningful behavioral insights.
 - Basic behavior insights
 - Trend-based predictions
 
+---
+
 ## System Design
-The system follows a client-server architecture where users log
+The system follows a client–server architecture where users log
 activities through a frontend interface. The backend processes
 activity data and derives behavioral insights dynamically.
-
 
 ---
 
@@ -38,6 +45,7 @@ These logs are used to compute timelines, summaries, and behavior trends.
 ---
 
 ## Tech Stack
+
 **Frontend**
 - React.js
 - Tailwind CSS
@@ -53,7 +61,8 @@ These logs are used to compute timelines, summaries, and behavior trends.
 ---
 
 ## Project Status
-🚧 Backend core completed (Auth, Activity Logging, Insights, Pattern Insights , Category Distribution)
+🚧 Backend core completed  
+(Auth, Activity Logging, Insights, Pattern Insights, Category Distribution)
 
 ---
 
@@ -76,6 +85,14 @@ These logs are used to compute timelines, summaries, and behavior trends.
 - Focus vs distraction analytics
 - All insights computed dynamically (no stored metrics)
 
+### Advanced Behavior Insights
+- Pattern-based insights:
+  - Average session duration
+  - Best focus day
+  - Best focus hour
+  - Worst distraction hour
+- Category-wise time distribution across a selected date range
+
 ---
 
 ## API Overview
@@ -86,20 +103,24 @@ These logs are used to compute timelines, summaries, and behavior trends.
 
 ### Activities
 - POST /api/activities
-- GET /api/activities/day
-- GET /api/activities/week
+- GET  /api/activities/day
+- GET  /api/activities/week
 
 ### Insights
 - GET /api/insights/day
 - GET /api/insights/week
+- GET /api/insights/pattern-insights
+- GET /api/insights/category-distribution
 
 ---
 
 ## Current Capabilities
 The backend currently supports secure user authentication, activity
-data collection, and dynamic behavioral analytics. The system forms
-the foundation of a Digital Behavior Twin that will be extended with
-visual dashboards and AI-based analysis in later phases.
+data collection, and dynamic behavioral analytics.  
+It now also supports advanced pattern-level insights and
+category-based analytics, forming the foundation of a Digital
+Behavior Twin that will be extended with visual dashboards and
+AI-based analysis in later phases.
 
 ---
 
@@ -109,13 +130,11 @@ visual dashboards and AI-based analysis in later phases.
 - Computed insights instead of stored metrics
 - Modular backend architecture (routes, controllers, services)
 
-
-
 ---
 
-### 🔹 Future Enhancements
-```md
-## Future Enhancements
-- Pattern Insights
-- Category distribution 
-- Time of day productivity
+## 🔹 Future Enhancements
+- AI-based behavior analysis and trend prediction
+- Time-of-day productivity scoring
+- Monthly and long-term behavior analytics
+- Personalized recommendations
+- Productivity score and streak tracking
