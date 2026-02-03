@@ -116,15 +116,6 @@ visual dashboards and AI-based analysis in later phases.
 ### 🔹 Future Enhancements
 ```md
 ## Future Enhancements
-- Monthly behavior reports
-- AI-based productivity predictions
-- Mobile app version
-- Advanced charts and comparison
-
---- 
-
-
-### Features Added
 - Pattern Insights
 - Category distribution 
 - Time of day productivity
